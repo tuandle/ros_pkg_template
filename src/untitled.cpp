@@ -44,9 +44,11 @@ public:
 	}
 	bool class_name::service_function_CB(std_srvs::Empty::Request& request,
                                        std_srvs::Empty::Response& response){
-		//do you request here
+		//do your request here
 	}
 	
 private:
+	ros::NodeHandle nh_,nh_private_;
+	bool latch_topics_;
 protected:	
 };
