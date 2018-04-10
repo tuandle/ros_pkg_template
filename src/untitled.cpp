@@ -2,20 +2,15 @@
 #include <boost/thread/thread.hpp>
 #include <Eigen/Dense>
 
-#include <tf/transform_listener.h>
-#include <tf/transform_broadcaster.h>
-#include <tf/LinearMath/Quaternion.h>
-#include <tf2/LinearMath/Quaternion.h>
-#include <tf2_ros/transform_broadcaster.h>
+#include <ros_pkg_template/untitle.h>
 
 typedef Eigen::Matrix<float, 6, 1> Vector6f;
 #define MYDEG2RAD(x) (3.14159265358979323846*x)/180.0f
 #define MYRAD2DEG(x) (180.0f*x)/3.14159265358979323846
 
-class class_name{
-public:
-	class_name(const ros::NodeHandle& nh,
-             const ros::NodeHandle& nh_private): //initialize here
+namespace class_name_space{
+	class_name::class_name(const ros::NodeHandle& nh,
+             						 const ros::NodeHandle& nh_private): //initialize here
 		nh_(nh),
     nh_private_(nh_private),
     latch_topics_(true) //not sure if we have to latch 
@@ -46,9 +41,4 @@ public:
                                        std_srvs::Empty::Response& response){
 		//do your request here
 	}
-	
-private:
-	ros::NodeHandle nh_,nh_private_;
-	bool latch_topics_;
-protected:	
-};
+}//end of class_name_space
